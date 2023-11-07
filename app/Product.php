@@ -24,6 +24,10 @@ class Product extends Model
         'tag_p2',
         'title_desc2',
         'desc2',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+        'og_image',
 
     ];
 

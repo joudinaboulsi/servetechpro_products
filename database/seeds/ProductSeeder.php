@@ -31,13 +31,17 @@ class ProductSeeder extends Seeder
                 'tag_p2'=>'Fabric, Textile',
                 'title_desc2'=>'DESCRIPTION',
                 'desc2'=>'<p>Connecting Rods: CTP&reg; Connecting Rods are made from steel forgings (malleable or spheroid-graphite iron casting or sinter forgings are beginning to be used for smaller engines).<br>Camshafts: CTP camshafts ensure long-term operation efficiency as a result of careful and quality based production. CTP guarantees low wear and tear camshafts, as well as long-life, smooth running engines.<br>Engine Bearings: CTP&reg; Copper/Lead bearings are made of a sintered trimetal with a base alloy of copper, lead and tin with a nickel dam and Babbitt top layer.</p>',
+                'meta_title'=>'Product detail',
+                'meta_description'=>'Product description',
+                'meta_keywords'=>'meta keywords',
+                'og_image'=>'1699359204columnbg-3.jpg',
                 'created_at' => '2023-11-03 07:06:26',
                 'updated_at' => '2023-11-03 07:06:26',
             ),
             1 => 
             array (
                 'id' => 2,
-                'image' => '1698995865b_thumbb-03.jpg',
+                'image' => '1698995186welcome-img.png',
                 'background' => '1698996771pagetitle-bg.jpg',
                 'product_name' => 'Satin Weaving',
                 'desc'=>'<p>Continuous weft yarn, with as few interruptions of warp as it possible.</p>',
@@ -50,7 +54,10 @@ class ProductSeeder extends Seeder
                 'tag_p2'=>'Fabric, Textile',
                 'title_desc2'=>'DESCRIPTION',
                 'desc2'=>'<p>Connecting Rods: CTP&reg; Connecting Rods are made from steel forgings (malleable or spheroid-graphite iron casting or sinter forgings are beginning to be used for smaller engines).<br>Camshafts: CTP camshafts ensure long-term operation efficiency as a result of careful and quality based production. CTP guarantees low wear and tear camshafts, as well as long-life, smooth running engines.<br>Engine Bearings: CTP&reg; Copper/Lead bearings are made of a sintered trimetal with a base alloy of copper, lead and tin with a nickel dam and Babbitt top layer.</p>',
-       
+                'meta_title'=>'Product detail',
+                'meta_description'=>'Product description',
+                'meta_keywords'=>'meta keywords',
+                'og_image'=>'1699359204columnbg-3.jpg',
                 'created_at' => '2023-11-03 07:06:26',
                 'updated_at' => '2023-11-03 07:06:26',
             ),  ));

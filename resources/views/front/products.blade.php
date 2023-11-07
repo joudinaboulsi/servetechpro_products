@@ -18,7 +18,7 @@
             <div class="row slick_slider slick-arrows-style1" data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows":true, "autoplay":false, "dots":false, "infinite":true, "responsive":[{"breakpoint":992,"settings":{"slidesToShow": 2}},{"breakpoint":840,"settings":{"slidesToShow": 2}},{"breakpoint":650,"settings":{"slidesToShow": 1}}]}'>
                 @foreach ($products as $product)
 
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-12 col-md-6 col-sm-6">
                         <!--featured-icon-box-->
                         <a href="{{ route('product_path',$product->id) }}">
                             <div class="featured-icon-box icon-align-top-content style8">

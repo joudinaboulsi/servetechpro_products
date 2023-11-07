@@ -28,6 +28,10 @@ class CreateProductsTable extends Migration
             $table->string('tag_p2')->nullable();
             $table->string('title_desc2')->nullable();
             $table->text('desc2')->nullable();
+            $table->text('meta_title')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->text('meta_keywords')->nullable();
+            $table->string('og_image')->nullable();
             $table->timestamps();
         });
     }

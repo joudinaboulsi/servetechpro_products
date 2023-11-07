@@ -62,8 +62,7 @@ Route::get("/footer", "Admin\FooterController@index")->name("footer");
 Route::post("/footer", "Admin\FooterController@update")->name("updateFooter");
 
 Route::get("/seo", "Admin\SeoController@index")->name("seo");
-Route::get('/seo-edit-{id}', 'Admin\SeoController@edit')->name('seoEdit');
-Route::post("/seo-update-{id}", "Admin\SeoController@update")->name("updateSeo");
+Route::post("/seo", "Admin\SeoController@seo")->name("updateSeo");
 
 Route::get("/settings", "Admin\SettingsController@index")->name("settings");
 Route::post("/settings", "Admin\SettingsController@update")->name("updateSettings");

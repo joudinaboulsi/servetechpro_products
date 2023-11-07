@@ -27,7 +27,7 @@ class ImageSeeder extends Seeder
             1 => 
             array (
                 'id' => 2,
-                'image' => '1698995746b_thumbb-03.jpg',
+                'image' => '1698995722post-01.jpg',
                 'alt_image' => 'portfolio',
                 'product_id' => '1',
 
@@ -37,7 +37,7 @@ class ImageSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'image' => '1698995735post-02.jpg',
+                'image' => '1698995722post-01.jpg',
                 'alt_image' => 'portfolio',
                 'product_id' => '1',
                 'created_at' => '2023-11-03 07:06:26',

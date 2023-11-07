@@ -100,6 +100,26 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3 mt-3">
+                                        <label for="meta_title" class="form-label">Meta title (max 60 characters)</label>
+                                        <input type="text" name="meta_title" class="form-control" id="meta_title"  />
+                                    </div>
+                                </div>
+                                <div class="pb-4">
+                                    <label for="meta_keywords" class="form-label">Meta Keywords (max 165 characters)</label>
+                                    <textarea class="form-control" id="meta_keywords" name="meta_keywords"></textarea>
+                                </div>
+                
+                                <div class="pb-4">
+                                    <label for="meta_description" class="form-label">Meta Description (max 160 characters)</label>
+                                    <textarea class="form-control" id="meta_description" name="meta_description"></textarea>
+                                </div>
+                
+                                <div class="pb-4">
+                                    <label for="og_image" class="form-label">OG Image (size 1200 x 627 px)</label>
+                                    <input class="form-control" type="file" id="og_image" name="og_image" />
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3 mt-3">
                                         <button type="submit" class="btn btn-outline-primary">Save</button>
                                     </div>
                                 </div>

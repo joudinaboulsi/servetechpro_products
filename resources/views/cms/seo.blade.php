@@ -10,7 +10,7 @@
 
                     <h5 class="card-header">SEO</h5>
                     <div class="card-body">
-                        <form method="POST" action="{{route('updateSeo',$page->id)}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('updateSeo')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-12">

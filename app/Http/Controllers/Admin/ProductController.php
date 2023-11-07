@@ -49,7 +49,7 @@ class ProductController extends Controller
         // dd($request->all());
         $image = FileUploadHelper::uploadFile($request, 'image', 'assets/product/');
         $background  = FileUploadHelper::uploadFile($request, 'background', 'assets/product/');
-     
+        $og_image = FileUploadHelper::uploadFile($request, 'og_image', '/assets/img/page/');
 
         Product::create([
             'product_name' => $request->product_name,
@@ -65,6 +65,10 @@ class ProductController extends Controller
             'tag_p2' => $request->tag_p2,
             'title_desc2' => $request->title_desc2,
             'desc2' => $request->desc2,
+            'meta_title' => $request->meta_title,
+            'meta_description' => $request->meta_description,
+            'meta_keywords' => $request->meta_keywords,
+            'og_image' => $request->og_image,
         ]);
 
         toastr()->success('Data has been saved successfully!');
@@ -83,6 +87,10 @@ class ProductController extends Controller
             if($background!=null)
                 $product->update(['background' => $background]);
 
+        $og_image = FileUploadHelper::uploadFile($request, 'og_image', 'assets/img/page/');
+        if($og_image!=null)
+            $product->update(['og_image' => $og_image]);
+
         $product->update([
             'product_name' => $request->product_name,
             'desc' => $request->desc,
@@ -95,6 +103,8 @@ class ProductController extends Controller
             'tag_p2' => $request->tag_p2,
             'title_desc2' => $request->title_desc2,
             'desc2' => $request->desc2,
+            'meta_description' => $request->meta_description,
+            'meta_keywords' => $request->meta_keywords,
         ]);
 
         toastr()->success('Data has been saved successfully!');

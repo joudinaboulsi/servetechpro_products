@@ -21,6 +21,9 @@ use App\ServicePage;
 use App\SectionTitles;
 use SEO;
 use SEOMeta;
+use App\SeoPage;
+use App\TitlePage;
+use App\OptionForm;
 use Mail;
 
 
@@ -35,25 +38,24 @@ class PagesController extends Controller
         });
     }
     
+    public function setSeo($page_data)
+    {
+      
+        SEO::setTitle($page_data->meta_title, false);
+        SEOMeta::setKeywords($page_data->meta_keywords, false);
+        SEO::setDescription($page_data->meta_description, false);
+        SEO::opengraph()->addProperty('type', 'article');
+        if ($page_data->image != NULL) // check if we have an OG image
+            SEO::addImages(getenv('APP_URL') . '/assets/img/page/' . $page_data->image);
+
+    }
 
 
     //home pgae
     public function home()
     {
-        $page_data = Page::where('id', '1')->get();
-
-        //get url of the page
-        $url = url()->current();
-        SEO::setTitle($page_data[0]->meta_title, false);
-        SEO::setDescription($page_data[0]->meta_description, false);
-        SEOMeta::setKeywords($page_data[0]->meta_keywords, false);
-        SEO::opengraph()->setUrl($url);
-        SEO::setCanonical($url);
-        SEO::opengraph()->addProperty('type', 'article');
-
-        if ($page_data[0]->image != NULL) // check if we have an OG image
-            SEO::addImages(getenv('APP_URL') . '/assets/img/page/' . $page_data[0]->image);
-
+        $page_data = Page::findOrFail(1);
+        $this->setSeo($page_data);
         $home_slides = HomeSlider::all();
         $about = About::all();
         $portfolio = PortfolioPage::get();
@@ -67,8 +69,7 @@ class PagesController extends Controller
         $section_two = SectionTwo::get();
         $settings = Settings::get();
         $products = Product::all();
-
-         $section = SectionTitles::where('id', '1')->get();
+        $section = SectionTitles::where('id', '1')->get();
 
         return view('front.home', compact('page_data', 'home_slides', 'about', 'portfolio', 'portfolio_image', 'clients', 'contact', 'footer', 'services_images', 'section_one', 'section_two', 'settings', 'services_pages',
         'products','section'));
@@ -76,27 +77,16 @@ class PagesController extends Controller
 
     public function productDetails($id)
     {
-
-        $page_data = Page::where('id', '2')->get();
-        //get url of the page
-        $url = url()->current();
-        SEO::setTitle($page_data[0]->meta_title, false);
-        SEO::setDescription($page_data[0]->meta_description, false);
-        SEOMeta::setKeywords($page_data[0]->meta_keywords, false);
-        SEO::opengraph()->setUrl($url);
-        SEO::setCanonical($url);
-        SEO::opengraph()->addProperty('type', 'article');
-
-        if ($page_data[0]->image != NULL) // check if we have an OG image
-            SEO::addImages(getenv('APP_URL') . '/assets/img/page/' . $page_data[0]->image);
-
-        
+        $product_page= Product::findOrFail($id);
+        $this->setSeo($product_page);
         $footer = Footer::get();
-        $product = Product::where('id',$id)->with('images')->get();
+
+       $product = Product::where('id',$id)->with('images')->get();
         $products = Product::where('id', '!=', $id)->get();
+
         $section = SectionTitles::where('id', '1')->get();
 
-        return view('front.product-details', compact('footer','product','products','page_data','section'));
+        return view('front.product-details', compact('footer','product','products','section','product_page'));
     }
 
     //Get the contact form details and send the mail
